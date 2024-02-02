@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="campana">Campana</button>
+
+    <p id="resultado">0</p>
+
+    <script>
+        let campana = document.getElementById("campana");
+        let resultado = document.getElementById("resultado");
+
+        campana.addEventListener("click", function() {
+            let numero = 0;
+            resultado.innerHTML = numero + 1;
+        })
+    </script>
+</body>
+</html>

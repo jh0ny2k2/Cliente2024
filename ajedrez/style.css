@@ -1,0 +1,123 @@
+#tablero{
+    display: grid;
+    grid-template-columns: repeat(8, 80px);
+    grid-template-rows: repeat(8, 80px);
+}
+
+.celdaB {
+    width: 80px;
+    height: 80px;
+    border: 1px solid black;
+}
+
+.celdaN {
+    width: 80px;
+    height: 80px;
+    background-color: rgb(142, 142, 142);
+    border: 1px solid black;
+}
+
+.caballoN {
+    width: 100%;
+    height: 100%;
+    background-image: url(./fichas/caballoN.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.caballoB {
+    background-image: url(./fichas/caballoB.png);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.alfilB {
+    background-image: url(./fichas/alfilB.png);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.alfilN {
+    background-image: url(./fichas/alfilN.png);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.peonB {
+    background-image: url(./fichas/peonB.png);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.peonN {
+    background-image: url(./fichas/peonN.png);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.reinaB {
+    background-image: url(./fichas/reinaB.png);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.reinaN {
+    background-image: url(./fichas/reinaN.png);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.reyB {
+    background-image: url(./fichas/reyB.png);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.reyN {
+    background-image: url(./fichas/reyN.png);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.torreB {
+    background-image: url(./fichas/torreB.png);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.torreN {
+    background-image: url(./fichas/torreN.png);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.peonB {
+    background-image: url(./fichas/peonB.png);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.peonN {
+    background-image: url(./fichas/peonN.png);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla Dinámica</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    #addRowBtn, #deleteRowBtn {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Tabla Dinámica</h2>
+
+  <button id="addRowBtn">Añadir Fila</button>
+  <button id="deleteRowBtn">Eliminar Fila</button>
+
+  <table id="myTable">
+    <thead>
+      <tr>
+        <th>Celda 1</th>
+        <th>Celda 2</th>
+        <th>Celda 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Filas se añadirán aquí dinámicamente -->
+    </tbody>
+  </table>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const addRowBtn = document.getElementById("addRowBtn");
+      const deleteRowBtn = document.getElementById("deleteRowBtn");
+      const tableBody = document.querySelector("#myTable tbody");
+
+      addRowBtn.addEventListener("click", addRow);
+      deleteRowBtn.addEventListener("click", deleteRow);
+
+      function addRow() {
+        const celda1 = prompt("Introduce el valor para Celda 1");
+        const celda2 = prompt("Introduce el valor para Celda 2");
+        const celda3 = prompt("Introduce el valor para Celda 3");
+
+        const newRow = tableBody.insertRow();
+        const cell1 = newRow.insertCell(0);
+        const cell2 = newRow.insertCell(1);
+        const cell3 = newRow.insertCell(2);
+
+        cell1.textContent = celda1;
+        cell2.textContent = celda2;
+        cell3.textContent = celda3;
+      }
+
+      function deleteRow() {
+        const rowCount = tableBody.rows.length;
+        if (rowCount > 0) {
+          tableBody.deleteRow(rowCount - 1);
+        } else {
+          alert("No hay filas para eliminar.");
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tablero</title>
+  <style>
+    div#tablero {
+  width: 600px;
+  height: 600px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+div.casilla {
+  border: 1px solid green;
+  padding: 0;
+  margin: 0px;
+  width: 150px;
+  height: 150px;
+  font-size: 700%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div.blanca {
+  background: white;
+}
+div.roja {
+  background: red;
+}
+.button {
+  margin-right: 30px;
+  margin-top: 30px;
+}
+  </style>
+</head>
+
+<body>
+  <div id="tablero"></div>
+
+  <div id="botones" class="button">
+    <button id="limpiar">Resetear Tablero</button>
+    <button id="rojo">Rojo</button>
+    <button id="blanco">Blanco</button>
+    <button id="ajedrez">Ajedrez</button>
+    <button id="sumaR">Sumar Rojas</button>
+    <button id="sumaB">Sumar Blancas</button>
+  </div>
+
+  <div id="resultado"></div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
