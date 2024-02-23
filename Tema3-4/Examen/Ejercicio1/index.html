@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="formulario">
+        <label for="nombre">nombre:</label>
+        <input type="text" name="nombre" id="nombre">
+        <br>
+        <label for="edad">Edad</label>
+        <input type="text" name="edad" id="edad">
+        <br>
+        <label for="aficion">Afición:</label>
+        <select id="aficion" name="aficion">
+            <option value="">Seleccione una afición</option>
+            <option value="deporte">Hacer Deporte</option>
+            <option value="informatica">Informática</option>
+            <option value="bailar">Bailar</option>
+        </select>
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        function validarForm() {
+            let nombre = document.getElementById("nombre").value;
+            let edad = parseInt(document.getElementById("edad").value);
+            let aficion = document.getElementById("aficion").value;
+
+            // Validar los datos del formulario
+            if (nombre === "") {
+                alert("Por favor, introduce tu nombre.");
+                return false;
+            }
+
+            if (edad <= 16) {
+                alert("Debes ser mayor de 16 años para enviar este formulario.");
+                return false;
+            }
+
+            if (aficion === "") {
+                alert("Por favor, selecciona una afición.");
+                return false;
+            }
+
+            // Pasar los datos a otra ventana
+            let ventana = window.open("", "Validación de formulario", "width=600,height=600");
+            ventana.document.write(`<h1>Datos del formulario:</h1>
+                                    <p>Nombre: ${nombre}</p>
+                                    <p>Edad: ${edad}</p>
+                                    <p>Afición: ${aficion}</p>
+                                    <input type="color" value="#ff0000">`);
+        }
+
+        window.onload = validarForm();
+    </script>
+</body>
+</html>

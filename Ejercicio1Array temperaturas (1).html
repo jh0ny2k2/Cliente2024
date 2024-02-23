@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio Arrays Temperaturas</title>
+	<style>
+		table,tr,td,th{
+			text-align: center;
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+	</style>
+</head>
+<body>
+<script type="text/javascript">
+	
+var poblaciones=['Nombre','Enero','Febrero','Marzo','Abril'];
+var temperaturas=[
+['Cuevas del almanzora',12,13,15,18],
+['Granada',4.5,5.8,9,15],
+['Madrid',4,5.8,8,13],
+['Soria',0,1,6,10]
+];
+temperaturas.push(['Malaga',14,16.7,18.4,20.3]);
+let medias=[];
+
+function generaTabla(){
+document.write("<h1>Poblaciones:</h1>");
+document.write("<table><tr>");
+for(let i=0;i < poblaciones.length;i++){
+	document.write("<th>"+poblaciones[i]+"</th>");
+}
+document.write("<th>Media </th></tr>");
+for(let i=0; i< temperaturas.length; i++){
+	document.write("<tr>");
+	let suma=0;
+	for(let j=0; j< temperaturas[i].length; j++){
+		document.write("<td>"+temperaturas[i][j]+"</td>")
+		if(j>0){
+			suma=suma+temperaturas[i][j];
+		}
+	}
+	document.write("<td>"+(suma/(temperaturas[i].length-1)).toFixed(2)+"</td></tr>");
+	medias.push(suma/(temperaturas[i].length-1).toFixed(2));
+}
+document.write("</table>");
+
+}
+generaTabla();
+//calculamos la maxima temperatura y la poblacion*/
+let maximo=0;
+let poblacion="";
+for(let i=0; i < temperaturas.length; i++){
+	if(maximo < temperaturas[i][3] ){
+		maximo=temperaturas[i][3];
+		poblacion= temperaturas[i][0];
+	}
+	
+}
+document.write("<br>La temperatura más alta en marzo: es de "+maximo+" y corresponde a la poblacion "+poblacion+"<br>");
+//calculamos la media de temperaturas en el mes de abril
+let sumaAbril=0;
+for(var i=0; i< temperaturas.length; i++){
+	sumaAbril=sumaAbril+temperaturas[i][4];
+}
+document.write("La media de las temperaturas en el mes de abril es de ");
+document.write((sumaAbril/temperaturas.length).toFixed(2)+"<br>");
+
+//calculamos la peor media y la poblacion
+let peor=100;
+for(var i=0;i<medias.length;i++){
+	if(medias[i]<peor){
+		peor=medias[i];
+	}
+}
+for(var s=0; s<medias.length;s++){
+	if(peor==medias[s]){
+		document.write("La poblacion con peor media de temperatura es: ");
+		document.write(temperaturas[s][0]+"<br>");
+	}
+}
+</script>
+	
+</body>
+</html>

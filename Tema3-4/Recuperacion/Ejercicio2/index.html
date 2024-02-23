@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #reloj{
+            background-color: black;
+            color: aliceblue;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div id="reloj">
+        <div id="hora"></div>
+        <div id="minutos"></div>
+        <div id="segundos"></div>
+    </div>
+    
+    
+    <script>
+        function generarReloj() {
+            let fecha = new Date();
+            let hora = fecha.getHours();
+            let minutos = fecha.getMinutes();
+            let segundos = fecha.getSeconds();
+
+            document.getElementById("hora").textContent = hora;
+            document.getElementById("minutos").textContent = " : " + minutos;
+            document.getElementById("segundos").textContent = " :¡ " + segundos;
+
+            setTimeout(generarReloj, 1000);
+        }
+
+        generarReloj();
+    </script>
+</body>
+</html>

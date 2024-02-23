@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="formulario">
+        <button type="button" onclick="generarQuiniela()">Generar Quiniela</button>
+    </form>
+
+    <script>
+        function generarQuiniela() {
+            let numerosSeleccionados = [];
+            while (numerosSeleccionados.length < 6) {
+                let numeroAleatorio = Math.floor(Math.random() * 49) + 1;
+                if (!numerosSeleccionados.includes(numeroAleatorio)) {
+                    numerosSeleccionados.push(numeroAleatorio);
+                }
+            }
+
+            let numeroComplementario = Math.floor(Math.random() * 9);
+            let numeroReintegro = Math.floor(Math.random() * 10);
+
+            let fechaActual = new Date();
+            let dia = fechaActual.getDay();
+            let mes = fechaActual.getMonth() + 1;
+            let anio = fechaActual.getFullYear();
+
+            let fecha = dia + "/" + mes + "/" + anio;
+
+            document.write("Quiniela: " + numerosSeleccionados.join(",") + " - reintegro: " + numeroReintegro + " - Complementario: " + numeroComplementario);
+            document.write("<br>Fecha:" + fecha);
+        }
+    </script>
+</body>
+</html>

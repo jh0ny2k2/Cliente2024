@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let Alumnos = ['Alumno', 'Cliente', 'Servidor', 'Diseño', 'Despliegue'];
+
+        let Notas = [
+            ['Juan', 5, 6, 7.3, 8],
+            ['María', 4,5, 5.8, 9],
+            ['Pablo', 10, 9.8, 8, 7],
+            ['Sonia', 3.6,5,7,6],
+            ['Carlos', 8, 3.7, 7.3, 9]
+        ];
+
+        Notas.push(['Jaime', 4,6.7,7.3,9]);
+
+        let medias = [];
+
+        function crearTabla() {
+            document.write('<table border="2">');
+            document.write("<tr>")
+            for (let i = 0; i <  Alumnos.length; i++) {
+                document.write("<td> " + Alumnos[i] + " </td>");
+            }
+            document.write("<td> media </td>");
+
+            for (let i = 0; i < Notas.length; i++) {
+                document.write ("<tr>");
+                let suma = 0;
+                for (let j = 0; j < Notas[i] .length ; j++ ) {
+                    document.write("<td> " + Notas[i][j] + " </td>");
+                    if ( j > 0) {
+                        suma += Notas[i][j];
+                    }
+                }
+                let media = (suma  / (Notas[i].length -1)).toFixed(2);
+                document.write( "<td>"+media+"</td>" );
+                medias.push(media);
+            }
+            document.write("</tr>");
+            document.write("</table>");
+        }
+
+        crearTabla();
+
+        // CALCULAMOS LA NOTA MAS ALTA DE CLIENTE
+        let nota = 0;
+        let alumno = "";
+
+        for (let i = 0; i < Notas.length; i++) {
+            if (nota < Notas[i][1]) {
+                nota = Notas[i][1];
+                alumno = Notas[i][0];
+            }
+        }
+
+        document.write("<br>La nota maxima en cliente es: " + nota + " y pertenece a: " + alumno);
+
+        // CAlCULAMOS LA NOTA MEDIA DE SERVIDOR
+        let sumamedias = 0;
+
+        for (let i = 0; i < Notas.length; i++) {
+            sumamedias = sumamedias +  Notas[i][2];
+        }
+
+        let medi = (sumamedias / (Notas.length - 1)).toFixed(2);
+        document.write("<br>La nota media de servidor es: " + medi);
+    </script>
+</body>
+</html>

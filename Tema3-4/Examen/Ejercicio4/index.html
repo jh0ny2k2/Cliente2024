@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        class Inmueble {
+            constructor(direccion, codigoPostal, localidad, provincia, metrosCuadrados, precio) {
+                this.direccion = direccion;
+                this.codigoPostal = codigoPostal;
+                this.localidad = localidad;
+                this.provincia = provincia;
+                this.metrosCuadrados = metrosCuadrados;
+                this.precio = precio;
+            }
+
+            mostrarInformacion () {
+                document.write(`Dirección: ${this.direccion}<br>`);
+                document.write(`Codigo Postal: ${this.codigoPostal}<br>`);
+                document.write(`Localidad: ${this.localidad}<br>`);
+                document.write(`Provincia: ${this.provincia}<br>`);
+                document.write(`Metros Cuadrados: ${this.metrosCuadrados}<br>`);
+                document.write(`Precio: ${this.precio} €dee`);
+            }
+
+
+            calcularDescuento () {
+                let descuento = prompt( "Por favor, introduzca el porcentaje de descuento");
+                
+                let descuentof = this.precio * (descuento / 100);
+                let precioFinal = this.precio - descuentof;
+                document.write("<br>Se le aplica un descuento de: " + descuentof);
+                document.write("<br>El precio final del inmueble es: " + precioFinal);
+            }
+        }
+
+        let direccion = prompt("dime la direccion del inmueble");
+        let cp = prompt("dime el codigo postal del inmueble");
+        let localidad = prompt("dime la localidad del inmueble");
+        let provincia = prompt("dime la provincia del inmueble");
+        let mts2 = prompt("¿Cuantos metros cuadrados tiene?");
+        let precio = prompt("¿A que precio se encuentra este inmueble?");
+
+        let inmueble = new Inmueble(direccion,cp,localidad,provincia,parseInt(mts2),parseFloat(precio));
+
+        inmueble.mostrarInformacion();
+        inmueble.calcularDescuento();
+    </script>
+</body>
+</html>

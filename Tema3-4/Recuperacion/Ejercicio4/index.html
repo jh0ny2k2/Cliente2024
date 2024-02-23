@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        class cuentaBancaria {
+            constructor(nombre, apellidos, direccion, cp, localidad, provincia, saldo) {
+                this.nombre = nombre;
+                this.apellidos = apellidos;
+                this.direccion = direccion;
+                this.cp = cp;
+                this.localidad = localidad;
+                this.provincia = provincia;
+                this.saldo = saldo;
+            }
+
+            mostrarInformacion() {
+                document.write(
+                    this.nombre + " " + 
+                    "<br>" + this.apellidos + ", " +
+                    "<br>" + this.direccion + ", " +
+                    "<br>" + this.cp + ", " + 
+                    "<br>" + this.localidad + ", " +
+                    "<br>" + this.provincia + ", " +
+                    "<br>" + this.saldo);
+            }
+
+            modificarSaldo() {
+                let nuevoSaldo = parseFloat(prompt("Introduce el nuevo saldo:"));
+                this.saldo = nuevoSaldo;
+                document.write("nuevo saldo:d")
+                this.mostrarInformacion(); 
+            }
+        } 
+
+        let nombre = prompt("dime el nombre del propietari");
+        let apellidos = prompt("dime los apellidos del propietario");
+        let direccion = prompt("dime la direccion del propietario");
+        let cp = prompt("dime el codigo postal");
+        let localidad = prompt("dime la localidad");
+        let provincia = prompt("dime la provincia");
+        let saldo = parseFloat(prompt("dime el saldo inicial"));
+
+        let cuenta1 = new cuentaBancaria (nombre, apellidos, direccion, cp, localidad, provincia, saldo);
+
+        cuenta1.mostrarInformacion();
+        cuenta1.modificarSaldo();
+    </script>
+</body>
+</html>

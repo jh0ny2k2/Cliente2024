@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #fecha {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div id="fecha">
+        <div id="hora"></div>
+        <div id="minutos"></div>
+        <div id="segundos"></div>
+    </div>
+
+    <script>
+        function cambiarHora() {
+            let fecha = new Date();
+            let hora = fecha.getHours();
+            let minutos = fecha.getMinutes();
+            let segundos = fecha.getSeconds();
+
+            document.getElementById("hora").textContent = hora;
+            document.getElementById("minutos").textContent = " : " + minutos;
+            document.getElementById("segundos").textContent = " : " + segundos;
+        }
+
+        setInterval(cambiarHora, 1000);
+    </script>
+</body>
+</html>
